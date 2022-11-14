@@ -8,6 +8,6 @@ ul.todos-container {
   justify-content: space-between;
 }
 
-span {
+.parent span {
   margin-left: 25px;
 }

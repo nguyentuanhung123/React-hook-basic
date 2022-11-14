@@ -11,11 +11,20 @@ import Text from "./views/Text/Text";
 
 import Covid19 from "./Covid19/Covid19";
 
+import Blog from "./views/Blog/Blog";
+
+import DetailBlog from "./views/Blog/DetailBlog.js";
+
+import AddNewBlog from "./views/Blog/AddNewBlog.js";
+
 // import CountDown from "./Countdown/Countdown";
 import { CountDown, NewCountDown } from "./Countdown/Countdown";
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { NotFound } from "./views/404NotFound/NotFound";
+
+import { YoutubeSearch } from "./views/YoutubeSearch/YoutubeSearch";
 //JSX : viết code html trong javascript
 //babel : dịch
 const App = () => {
@@ -58,11 +67,11 @@ const App = () => {
   ]);
 
   useEffect(() => {
-    console.log("run use effect title");
+    //console.log("run use effect title");
   }, [title]);
 
   useEffect(() => {
-    console.log("run use effect todos");
+    //console.log("run use effect todos");
   }, [todos]);
 
   const handleOnChangeInput = (event) => {
@@ -157,6 +166,21 @@ const App = () => {
               >
                 Click me
               </button>
+            </Route>
+            <Route path="/blog" exact>
+              <Blog />
+            </Route>
+            <Route path="/blog/:id">
+              <DetailBlog />
+            </Route>
+            <Route path="/add-new-blog">
+              <AddNewBlog />
+            </Route>
+            <Route path="/secret">
+              <YoutubeSearch />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </header>

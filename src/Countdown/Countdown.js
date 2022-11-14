@@ -6,7 +6,7 @@ class CountDown extends React.Component {
   state = {
     count: 10,
   };
-  componentDidMount() {
+  componentDidMount() { //Diễn ra khi component được render và đặt trong DOM.
     // setTimeout(() => {
     //   console.log("me");
     // }, 1000);
@@ -17,7 +17,10 @@ class CountDown extends React.Component {
     }, 1000);
   } //hàm này chạy sau khi render lần đầu
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(
+    prevProps,
+    prevState //Được kích hoạt ngay lập tức sau khi render.
+  ) {
     if (prevState.count !== this.state.count && this.state.count === 0) {
       if (this.timer) {
         clearInterval(this.timer);
